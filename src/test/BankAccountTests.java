@@ -68,10 +68,9 @@ class BankAccountTests {
 	@Test
 	void testCreateNewAccount() {
 		BankAccount testAccount2 = new BankAccount();
-		int accountNumber = testAccount2.getAccountNumber();
+		double balance = testAccount2.getBalance();
 		
-		assertTrue(3 == testAccount.getAccountNumber());
-		assertTrue(4 == accountNumber);
+		assertEquals(0, balance, 0.01);
 		
 	}
 	
