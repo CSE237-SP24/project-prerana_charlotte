@@ -58,5 +58,37 @@ class BankAccountTests {
 			assertTrue(true);
 		}
 	}
+	@Test
+	void testCreateNewAccount() {
+		BankAccount testAccount2 = new BankAccount();
+		int accountNumber = testAccount2.getAccountNumber();
+		
+		assertTrue(3 == testAccount.getAccountNumber());
+		assertTrue(4 == accountNumber);
+		
+	}
+	
+	@Test
+	void testCreateNewAccountWithBalance() {
+		BankAccount testAccount3 = new BankAccount(1000);
+		double balance = testAccount3.getBalance();
+		
+		assertEquals(1000.0, balance, 0.01);
+		
+	}
+	
+	@Test
+	void testCreateNewAccountNegativeBalance() {
+		try {
+			BankAccount testAccount4 = new BankAccount(-1000);
+			fail();
+		}
+		catch (IllegalArgumentException e) {
+			//we should fail because we can't create an account with negative balance
+			assertTrue(true);
+		}
+		
+	}
+	
 
 }

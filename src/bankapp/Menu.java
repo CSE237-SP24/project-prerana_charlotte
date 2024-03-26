@@ -44,6 +44,11 @@ public class Menu {
 		System.out.println("Your balance is now: " + account.getBalance());
 	}
 	
+//	public BankAccount createNewAccount() {
+//		BankAccount newAccount = new BankAccount();
+//		return newAccount;
+//	}
+	
 	public BankAccount getAccount() {
 		return account;
 	}
