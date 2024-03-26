@@ -19,7 +19,6 @@ class BankAccountTests {
 	@Test
 	void testSimpleDeposit() {
 		
-		
 		//2. Call the method being tested
 		testAccount.deposit(25);
 		
@@ -41,6 +40,13 @@ class BankAccountTests {
 	}
 	
 	@Test
+	void testZeroDeposit() {
+		testAccount.deposit(25);
+		testAccount.deposit(0);
+		assertEquals(25.0, testAccount.getBalance(), 0.01);
+	}
+	
+	@Test
 	void testSimpleWithdrawal() {
 		testAccount.deposit(500);
 		testAccount.withdraw(200);
@@ -58,6 +64,7 @@ class BankAccountTests {
 			assertTrue(true);
 		}
 	}
+	
 	@Test
 	void testCreateNewAccount() {
 		BankAccount testAccount2 = new BankAccount();
@@ -90,5 +97,12 @@ class BankAccountTests {
 		
 	}
 	
+	@Test
+	void testZeroWithdrawal() {
+		testAccount.deposit(500);
+		testAccount.withdraw(0);
+		
+		assertEquals(500.0, testAccount.getBalance(), 0.01);
+	}
 
 }
