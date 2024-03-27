@@ -103,5 +103,16 @@ class BankAccountTests {
 		
 		assertEquals(500.0, testAccount.getBalance(), 0.01);
 	}
+	
+	@Test
+	void testNegativeWithdrawal() {
+		try {
+			testAccount.deposit(300);
+			testAccount.withdraw(-20);
+			fail();
+		} catch (IllegalArgumentException e) {
+			assertTrue(true);
+		}
+	}
 
 }

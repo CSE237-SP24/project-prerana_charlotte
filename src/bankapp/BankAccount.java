@@ -43,6 +43,9 @@ public class BankAccount {
 		if (amount > balance) {
 			throw new IllegalArgumentException("Amount must be less than or equal to balance");
 		}
+		if (amount < 0) {
+			throw new IllegalArgumentException("Amount must be positive");
+		}
 		this.balance -= amount;
 	}
 	
